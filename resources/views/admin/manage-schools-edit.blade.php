@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Manage Schools</title>
+  <title>Edit School</title>
 
   <!-- Vendor CSS Files -->
   <link rel="stylesheet" href="/assets/vendor/bootstrap/css/bootstrap.min.css">
@@ -42,18 +42,18 @@
   <main id="main" class="main">
 
     <div class="pagetitle">
-      <h1>Manage Schools</h1>
+      <h1>Edit School</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item active">Manage Schools</li>
+          <li class="breadcrumb-item"><a href="{{ route('schools.index') }}">Home</a></li>
+          <li class="breadcrumb-item active">Edit School</li>
         </ol>
       </nav>
     </div><!-- End Page Title -->
 
     <section class="section">
       <div class="container mt-5">
-        <h2 class="text-center mb-4">Manage Schools</h2>
+        <h2 class="text-center mb-4">Edit School</h2>
 
         <div class="card">
           <div class="card-body">
@@ -63,72 +63,37 @@
               </div>
             @endif
 
-            <form action="{{ route('schools.store') }}" method="POST">
+            <form action="{{ route('schools.update', $school->id) }}" method="POST">
               @csrf
+              @method('PUT')
               <div class="form-group">
                 <label for="schoolName">School Name</label>
-                <input type="text" class="form-control" id="schoolName" name="name" required>
+                <input type="text" class="form-control" id="schoolName" name="name" value="{{ $school->name }}" required>
               </div>
 
               <div class="form-group">
                 <label for="district">District</label>
-                <input type="text" class="form-control" id="district" name="district" required>
+                <input type="text" class="form-control" id="district" name="district" value="{{ $school->district }}" required>
               </div>
 
               <div class="form-group">
                 <label for="schoolRegNumber">School Registration Number</label>
-                <input type="text" class="form-control" id="schoolRegNumber" name="regNo" required>
+                <input type="text" class="form-control" id="schoolRegNumber" name="regNo" value="{{ $school->regNo }}" required>
               </div>
 
               <div class="form-group">
                 <label for="repName">Representative Name</label>
-                <input type="text" class="form-control" id="repName" name="representative_name" required>
+                <input type="text" class="form-control" id="repName" name="representative_name" value="{{ $school->representative_name }}" required>
               </div>
 
               <div class="form-group">
                 <label for="repEmail">Representative Email</label>
-                <input type="email" class="form-control" id="repEmail" name="email" required>
+                <input type="email" class="form-control" id="repEmail" name="email" value="{{ $school->email }}" required>
               </div>
 
-              <button type="submit" class="btn btn-primary">Add School</button>
+              <button type="submit" class="btn btn-primary">Update School</button>
             </form>
 
-            <hr>
-
-            <h3 class="mt-4">Registered Schools</h3>
-            <table class="table table-bordered">
-              <thead>
-                <tr>
-                  <th>#</th>
-                  <th>School Name</th>
-                  <th>District</th>
-                  <th>School Registration Number</th>
-                  <th>Representative Name</th>
-                  <th>Representative Email</th>
-                  <th>Actions</th>
-                </tr>
-              </thead>
-              <tbody>
-                @foreach ($schools as $school)
-                  <tr>
-                    <td>{{ $loop->iteration }}</td>
-                    <td>{{ $school->name }}</td>
-                    <td>{{ $school->district }}</td>
-                    <td>{{ $school->regNo }}</td>
-                    <td>{{ $school->representative_name }}</td>
-                    <td>{{ $school->email }}</td>
-                    <td>
-                      <a href="{{ route('schools.edit', $school->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                      <form action="{{ route('schools.destroy', $school->id) }}" method="POST" style="display: inline-block;">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
-                      </form>
-                    </td>
-                  </tr>
-                @endforeach
-              </tbody>
-            </table>
           </div>
         </div>
       </div>

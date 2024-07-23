@@ -1,6 +1,13 @@
 <?php
 
+
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\SchoolController;
+use App\Http\Controllers\ChallengeController;
+use App\Http\Controllers\ParticipantController;
+use App\Http\Controllers\SchoolRepresentativeController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -110,3 +117,47 @@ Route::post('/register', function () {
 });
 
 
+
+Route::get('/user', function () {
+    return view('components.user');
+})->name('userhome');
+
+Route::get('admin/manage-schools', [SchoolController::class, 'index'])->name('admin.manage-schools');
+
+Route::resource('schools', SchoolController::class);
+
+Route::get('/upload-questions-answers', function () {
+    return view('admin.upload-questions-answers');
+})->name('showUploadForm');
+
+Route::post('/upload-questions', 'ChallengeController@store')->name('setChallenge');
+
+Route::get('/challenges', [ChallengeController::class, 'index'])->name('challenges.index');
+Route::get('/challenges/create', [ChallengeController::class, 'create'])->name('challenges.create');
+Route::post('/challenges', [ChallengeController::class, 'store'])->name('challenges.store');
+Route::get('/challenges/{id}/edit', [ChallengeController::class, 'edit'])->name('challenges.edit');
+Route::put('/challenges/{id}', [ChallengeController::class, 'update'])->name('challenges.update');
+Route::delete('/challenges/{id}', [ChallengeController::class, 'destroy'])->name('challenges.destroy');
+
+Route::post('/upload-questions', [ChallengeController::class, 'store'])->name('challenges.store');
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
+
+Route::get('/participant/login', [ParticipantController::class, 'showLoginForm'])->name('participant.login');
+
+Route::get('/admin/login', [App\Http\Controllers\AdminController::class, 'showLoginForm'])->name('admin.login');
+
+Route::get('/school-representative', [SchoolRepresentativeController::class, 'index'])->name('school-representative.login');
+
+// routes/web.php
+
+use App\Http\Controllers\AdminController;
+
+Route::get('/upload-questions-answers', [AdminController::class, 'showUploadForm'])->name('admin.upload-questions-form');
+Route::post('/upload-questions-answers', [AdminController::class, 'uploadQuestions'])->name('admin.upload-questions');
+use App\Http\Controllers\Admin\UploadQuestionsController;
+
+Route::get('/admin/upload-questions', [UploadQuestionsController::class, 'showUploadForm'])->name('showUploadForm');
+Route::post('/admin/upload-questions', [UploadQuestionsController::class, 'uploadQuestions'])->name('uploadQuestions');
