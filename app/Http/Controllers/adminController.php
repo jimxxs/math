@@ -9,10 +9,15 @@ use App\Models\Question;
 use App\Models\Answer;
 
 class AdminController extends Controller
+
 {
+    public function showLoginForm(){
+        return view('auth.login');
+    }
+
     public function showUploadForm()
     {
-        return view('admin.upload-questions');
+        return view('admin.upload-questions-answers');
     }
 
     public function uploadQuestions(Request $request)

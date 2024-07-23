@@ -11,7 +11,7 @@
     </li><!-- End Dashboard Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="{{ route('admin.upload-questions') }}">
+      <a class="nav-link collapsed" href="{{ route('challenges.index') }}">
         <i class="bi bi-upload"></i>
         <span>Set Challenge</span>
       </a>

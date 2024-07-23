@@ -3,13 +3,13 @@
 
   <div class="d-flex align-items-center justify-content-between">
     <a href="#" class="logo d-flex align-items-center text-white">
-      <img src="assets/img/logo.png" alt="Logo" class="me-2" style="height: 40px;">
-      <span>Math Challenges</span>
+      <img src="images/logo.png" alt="Logo" class="me-2" style="height: 100px;">
+      <span></span>
     </a>
     <i class="bi bi-list toggle-sidebar-btn text-white"></i>
   </div><!-- End Logo -->
 
-  <h2 class="d-none d-lg-block mx-auto text-white">Mathematics Challenges</h2>
+  <h2 class="d-none d-lg-block mx-auto text-white">Mathematics is the key</h2>
 
   <nav class="header-nav ms-auto">
     <ul class="d-flex align-items-center">

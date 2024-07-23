@@ -11,7 +11,7 @@ class ChallengeController extends Controller
     public function index()
     {
         $challenges = Challenge::all();
-        return view('admin.manage-challenges', compact('challenges'));
+        return view('admin.upload-questions', compact('challenges'));
     }
 
     public function create()

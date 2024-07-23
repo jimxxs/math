@@ -33,9 +33,9 @@
     <div class="d-flex justify-content-center">
         <select class="custom-select w-50" id="roleSelection">
             <option selected>Choose...</option>
-            <option value="participant">Participant</option>
+            
             <option value="administrator">Administrator</option>
-            <option value="school_representative">School Representative</option>
+            
         </select>
     </div>
 
@@ -52,15 +52,11 @@
 function roleSelected() {
     var role = document.getElementById('roleSelection').value;
     switch(role) {
-        case 'participant':
-            window.location.href = '{{ route("participant.login") }}';
-            break;
+      
         case 'administrator':
             window.location.href = '{{ route("admin.login") }}';
             break;
-        case 'school_representative':
-            window.location.href = '{{ route("school-representative.login") }}';
-            break;
+       
         default:
             alert('Please select a role to continue.');
             break;

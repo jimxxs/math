@@ -85,7 +85,7 @@
           
           <!-- Button to navigate to upload questions and answers -->
           <div class="mt-3">
-            <a href="{{ route('showUploadForm') }}" class="btn btn-secondary">Upload Questions and Answers</a>
+            <a href="{{ route('admin.upload-questions-form') }}" class="btn btn-secondary">Upload Questions and Answers</a>
           </div>
           
         </div>
