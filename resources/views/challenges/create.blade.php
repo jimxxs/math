@@ -48,7 +48,7 @@
 
     <section class="section">
       <div class="container mt-5">
-        <h2 class="text-center mb-4">Set a New Challenge</h2>
+        <h2 class="text-center mb-4">Create New Challenge</h2>
         <div class="card">
           <div class="card-body">
           <form action="{{ route('challenges.store') }}" method="POST">
