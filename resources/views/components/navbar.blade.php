@@ -3,7 +3,7 @@
 
   <div class="d-flex align-items-center justify-content-between">
     <a href="#" class="logo d-flex align-items-center text-white">
-      <img src="images/logo.png" alt="Logo" class="me-2" style="height: 100px;">
+      <img src="images/a.jpg" alt="Logo" class="me-2" style="height: 100px;">
       <span></span>
     </a>
     <i class="bi bi-list toggle-sidebar-btn text-white"></i>
@@ -28,7 +28,7 @@
         <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile shadow-sm">
           <li class="dropdown-header">
             <h6>Jim Edward</h6>
-            <span>Web Designer</span>
+            <span>Software Engineer</span>
           </li>
           <li>
             <hr class="dropdown-divider">

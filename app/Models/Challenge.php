@@ -14,13 +14,7 @@ class Challenge extends Model
         'start_date',
         'end_date',
         'duration',
-        // Add more fields as needed
+        'number_of_questions',
+        'status',
     ];
-
-    // Optional: Define relationships with other models
-    // For example, if a Challenge has many Questions:
-    public function questions()
-    {
-        return $this->hasMany(Question::class);
-    }
 }

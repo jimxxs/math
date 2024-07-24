@@ -11,11 +11,18 @@
     </li><!-- End Dashboard Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="{{ route('challenges.index') }}">
+      <a class="nav-link collapsed" href="{{ route('challenges.create') }}">
         <i class="bi bi-upload"></i>
-        <span>Set Challenge</span>
+        <span>Set Challenges</span>
       </a>
     </li><!-- End Upload Questions Nav -->
+
+    <li class="nav-item">
+      <a class="nav-link collapsed" href="{{ route('admin.upload-questions-form') }}">
+        <i class="bi bi-upload"></i>
+        <span>Upload Questions and Answers</span>
+      </a>
+    </li>
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="{{ route('admin.manage-schools') }}">
@@ -25,16 +32,16 @@
     </li><!-- End Manage Schools Nav -->
 
     <li class="nav-item">
-      <a class="nav-link collapsed" href="{{ route('admin.view-challenge') }}">
+      <a class="nav-link collapsed" href="{{ route('challenges.index') }}">
         <i class="bi bi-eye"></i>
-        <span>View Challenge</span>
+        <span>View Set Challenges</span>
       </a>
     </li><!-- End View Challenge Nav -->
 
     <li class="nav-item">
       <a class="nav-link collapsed" href="{{ route('admin.analytics') }}">
         <i class="bi bi-bar-chart"></i>
-        <span>View Analytics</span>
+        <span>Analytics</span>
       </a>
     </li><!-- End View Analytics Nav -->
 

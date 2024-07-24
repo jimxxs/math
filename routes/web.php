@@ -4,8 +4,6 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SchoolController;
 use App\Http\Controllers\ChallengeController;
-use App\Http\Controllers\ParticipantController;
-use App\Http\Controllers\SchoolRepresentativeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Admin\UploadQuestionsController;
 use App\Http\Controllers\HomeController;
@@ -62,40 +60,8 @@ Route::get('/admin/analytics', function () {
     return view('admin.analytics');
 })->name('admin.analytics');
 
-// School Representative Routes
-Route::get('/representative/dashboard', function () {
-    return view('representative.dashboard');
-})->name('representative.dashboard');
 
-Route::get('/representative/confirm-participants', function () {
-    return view('representative.confirm-participants');
-})->name('representative.confirm-participants');
 
-Route::post('/representative/confirm-participants/{username}', function ($username) {
-    // Handle confirmation of participants
-})->name('representative.confirm');
-
-// Participant Routes
-Route::get('/participant/dashboard', function () {
-    return view('participant.dashboard');
-})->name('participant.dashboard');
-
-Route::get('/participant/view-challenges', function () {
-    return view('participant.view-challenges');
-})->name('participant.view-challenges');
-
-Route::post('/participant/attempt-challenge/{challenge_id}', function ($challenge_id) {
-    // Handle challenge attempt
-})->name('participant.attempt-challenge');
-
-Route::get('/participant/view-results', function () {
-    return view('participant.view-results');
-})->name('participant.view-results');
-
-// Participant Registration
-Route::get('/register', function () {
-    return view('auth.register');
-})->name('register');
 
 Route::post('/register', function () {
     // Handle registration logic

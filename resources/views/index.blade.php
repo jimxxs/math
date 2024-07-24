@@ -43,6 +43,30 @@
       display: flex;
       align-items: center;
     }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #121212;
+      color: #ffffff;
+    }
+
+    .dark-mode .card {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+
+    .dark-mode .breadcrumb {
+      background-color: #1e1e1e;
+      color: #ffffff;
+    }
+
+    .dark-mode .navbar, .dark-mode .sidebar {
+      background-color: #1e1e1e;
+    }
+
+    .dark-mode .navbar a, .dark-mode .sidebar a {
+      color: #ffffff;
+    }
   </style>
 
   <!-- =======================================================
@@ -111,7 +135,7 @@
                       <i class="bi bi-question-circle"></i>
                     </div>
                     <div>
-                      <h6>200</h6>
+                      <h6>100</h6>
                     </div>
                   </div>
 
@@ -297,7 +321,10 @@
 
   </main><!-- End #main -->
 
-
+  <!-- Dark mode toggle -->
+  <div class="dark-mode-toggle">
+    <button id="darkModeToggle" class="btn btn-secondary">Toggle Dark Mode</button>
+  </div>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
@@ -310,6 +337,12 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <script>
+    document.getElementById('darkModeToggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
 
 </body>
 
