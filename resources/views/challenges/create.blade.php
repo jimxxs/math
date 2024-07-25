@@ -53,6 +53,7 @@
           <div class="card-body">
           <form action="{{ route('challenges.store') }}" method="POST">
   @csrf
+  
   <div class="form-group mb-3">
     <label for="challengeName">Challenge Name</label>
     <input type="text" class="form-control" id="challengeName" name="challengeName" required>

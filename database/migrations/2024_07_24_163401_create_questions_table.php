@@ -9,10 +9,10 @@ class CreateQuestionsTable extends Migration
     {
         Schema::create('questions', function (Blueprint $table) {
             $table->id();
-            $table->string('question_text');
+            $table->unsignedBigInteger('question_id')->unique();
+            $table->text('text');
+            $table->integer('marks');
             $table->unsignedBigInteger('challenge_id');
-            $table->foreign('challenge_id')->references('id')->on('challenges')->onDelete('cascade');
-            $table->integer('marks')->default(1);
             $table->timestamps();
         });
     }

@@ -6,27 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 class AddNumberOfQuestionsToChallengesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::table('challenges', function (Blueprint $table) {
-            $table->integer('number_of_questions')->after('duration'); // Adding the column
+            if (!Schema::hasColumn('challenges', 'number_of_questions')) {
+                $table->integer('number_of_questions')->after('duration');
+            }
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::table('challenges', function (Blueprint $table) {
-            $table->dropColumn('number_of_questions');
+            if (Schema::hasColumn('challenges', 'number_of_questions')) {
+                $table->dropColumn('number_of_questions');
+            }
         });
     }
 }

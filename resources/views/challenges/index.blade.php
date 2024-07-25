@@ -57,6 +57,7 @@
                 <table class="table table-striped table-bordered" id="datatable">
                   <thead>
                     <tr>
+              
                       <th>Challenge Name</th>
                       <th>Start Date</th>
                       <th>End Date</th>
@@ -68,6 +69,7 @@
                   <tbody>
                     @foreach($challenges as $challenge)
                     <tr>
+          
                       <td>{{ $challenge->challenge_name }}</td>
                       <td>{{ $challenge->start_date }}</td>
                       <td>{{ $challenge->end_date }}</td>

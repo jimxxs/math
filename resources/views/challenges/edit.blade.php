@@ -54,6 +54,7 @@
             <form action="{{ route('challenges.update', $challenge->id) }}" method="POST">
               @csrf
               @method('PUT')
+
               <div class="form-group mb-3">
                 <label for="challengeName">Challenge Name</label>
                 <input type="text" class="form-control" id="challengeName" name="challengeName" value="{{ $challenge->name }}" required>

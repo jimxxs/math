@@ -6,27 +6,21 @@ use Illuminate\Support\Facades\Schema;
 
 class AddStatusToChallengesTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         Schema::table('challenges', function (Blueprint $table) {
-            $table->string('status')->default('Active')->after('number_of_questions'); // Adding the column
+            if (!Schema::hasColumn('challenges', 'status')) {
+                $table->string('status')->default('Active')->after('number_of_questions');
+            }
         });
     }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::table('challenges', function (Blueprint $table) {
-            $table->dropColumn('status');
+            if (Schema::hasColumn('challenges', 'status')) {
+                $table->dropColumn('status');
+            }
         });
     }
 }

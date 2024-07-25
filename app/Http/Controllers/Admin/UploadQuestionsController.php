@@ -4,6 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\Question;
+use App\Models\Answer;
+use App\Imports\QuestionsImport;
+use App\Imports\AnswersImport;
+
 
 class UploadQuestionsController extends Controller
 {
@@ -24,9 +30,11 @@ class UploadQuestionsController extends Controller
         $questionsFile = $request->file('questionsFile');
         $answersFile = $request->file('answersFile');
 
-        // Process the files (e.g., store them, read content, etc.)
+        // Process the files
+        Excel::import(new QuestionsImport, $questionsFile);
+        Excel::import(new AnswersImport, $answersFile);
 
         // Redirect or return with a success message
-        return redirect()->route('showUploadForm')->with('success', 'Files uploaded successfully.');
+        return redirect()->route('admin.upload-questions')->with('success', 'Files uploaded successfully.');
     }
 }
