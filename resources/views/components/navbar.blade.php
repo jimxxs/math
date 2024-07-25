@@ -1,5 +1,5 @@
 <!-- ======= Header ======= -->
-<header id="header" class="header fixed-top d-flex align-items-center shadow-sm" style="background-color: #343a40; color: #fff;">
+<header id="header" class="header fixed-top d-flex align-items-center shadow-sm" style="background-color: #000000; color: #fff;">
 
   <div class="d-flex align-items-center justify-content-between">
     <a href="#" class="logo d-flex align-items-center text-white">

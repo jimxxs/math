@@ -1,5 +1,5 @@
 <!-- ======= Sidebar ======= -->
-<aside id="sidebar" class="sidebar bg-dark text-white">
+<aside id="sidebar" class="sidebar bg-dark text-white" style="background-color: #000000;">
 
   <ul class="sidebar-nav" id="sidebar-nav">
 
