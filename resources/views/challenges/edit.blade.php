@@ -40,7 +40,7 @@
       <h1>Edit Challenge</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li><a href="{{ route('dashboard') }}">Home / </a></li>
           <li class="breadcrumb-item active">Edit Challenge</li>
         </ol>
       </nav>

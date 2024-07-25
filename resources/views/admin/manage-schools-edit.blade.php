@@ -45,7 +45,7 @@
       <h1>Edit School</h1>
       <nav>
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="{{ route('schools.index') }}">Home</a></li>
+          <li><a href="{{ route('dashboard') }}">Home / </a></li>
           <li class="breadcrumb-item active">Edit School</li>
         </ol>
       </nav>

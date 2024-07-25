@@ -67,6 +67,23 @@
     .dark-mode .navbar a, .dark-mode .sidebar a {
       color: #ffffff;
     }
+
+    /* Video container */
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 0;
+      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      overflow: hidden;
+    }
+
+    .video-container iframe, .video-container video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   </style>
 
   <!-- =======================================================
@@ -98,224 +115,15 @@
 
     <section class="section dashboard">
       <div class="row">
-
-        <!-- Left side columns -->
-        <div class="col-lg-8">
-          <div class="row">
-
-            <!-- Total Schools Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card schools-card">
-
-                <div class="card-body">
-                  <h5 class="card-title">Total Schools</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle bg-primary text-white">
-                      <i class="bi bi-building"></i>
-                    </div>
-                    <div>
-                      <h6>50</h6>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div><!-- End Total Schools Card -->
-
-            <!-- Total Questions Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card questions-card">
-
-                <div class="card-body">
-                  <h5 class="card-title">Total Questions</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle bg-success text-white">
-                      <i class="bi bi-question-circle"></i>
-                    </div>
-                    <div>
-                      <h6>100</h6>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div><!-- End Total Questions Card -->
-
-            <!-- Ongoing Challenges Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card challenges-card">
-
-                <div class="card-body">
-                  <h5 class="card-title">Ongoing Challenges</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle bg-warning text-white">
-                      <i class="bi bi-trophy"></i>
-                    </div>
-                    <div>
-                      <h6>5</h6>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div><!-- End Ongoing Challenges Card -->
-
-            <!-- Upcoming Challenges Card -->
-            <div class="col-xxl-4 col-md-6">
-              <div class="card info-card upcoming-challenges-card">
-
-                <div class="card-body">
-                  <h5 class="card-title">Upcoming Challenges</h5>
-
-                  <div class="d-flex align-items-center">
-                    <div class="card-icon rounded-circle bg-info text-white">
-                      <i class="bi bi-calendar-event"></i>
-                    </div>
-                    <div>
-                      <h6>10</h6>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div><!-- End Upcoming Challenges Card -->
-
-            <!-- Recent Activity Card -->
-            <div class="col-12">
-              <div class="card recent-activity-card">
-
-                <div class="card-body">
-                  <h5 class="card-title">Recent Activity</h5>
-
-                  <div class="activity">
-                    <div class="activity-item d-flex align-items-center">
-                      <div class="activity-icon bg-primary text-white rounded-circle">
-                        <i class="bi bi-upload"></i>
-                      </div>
-                      <div>
-                        <span class="fw-bold text-primary">New Questions Uploaded</span> by Admin
-                        <span class="text-muted small pt-1">2 hours ago</span>
-                      </div>
-                    </div>
-
-                    <div class="activity-item d-flex align-items-center">
-                      <div class="activity-icon bg-success text-white rounded-circle">
-                        <i class="bi bi-trophy"></i>
-                      </div>
-                      <div>
-                        <span class="fw-bold text-success">New Challenge Set</span> by Admin
-                        <span class="text-muted small pt-1">1 day ago</span>
-                      </div>
-                    </div>
-
-                    <div class="activity-item d-flex align-items-center">
-                      <div class="activity-icon bg-warning text-white rounded-circle">
-                        <i class="bi bi-building"></i>
-                      </div>
-                      <div>
-                        <span class="fw-bold text-warning">New School Registered</span> by Admin
-                        <span class="text-muted small pt-1">3 days ago</span>
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              </div>
-            </div><!-- End Recent Activity Card -->
-
+        <!-- Video Section -->
+        <div class="col-12">
+          <div class="video-container">
+            <video autoplay loop muted>
+              <source src="assets/videos/mtc.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
           </div>
-        </div><!-- End Left Side -->
-
-        <!-- Right side columns -->
-        <div class="col-lg-4">
-
-          <!-- Notifications Card -->
-          <div class="card notifications-card">
-
-            <div class="card-body">
-              <h5 class="card-title">Notifications</h5>
-
-              <div class="notifications">
-                <div class="notification-item d-flex align-items-center">
-                  <div class="notification-icon bg-info text-white rounded-circle">
-                    <i class="bi bi-info-circle"></i>
-                  </div>
-                  <div>
-                    <span class="fw-bold text-info">System Update</span> scheduled for tomorrow
-                    <span class="text-muted small pt-1">1 hour ago</span>
-                  </div>
-                </div>
-
-                <div class="notification-item d-flex align-items-center">
-                  <div class="notification-icon bg-danger text-white rounded-circle">
-                    <i class="bi bi-exclamation-circle"></i>
-                  </div>
-                  <div>
-                    <span class="fw-bold text-danger">Server Downtime</span> expected this weekend
-                    <span class="text-muted small pt-1">2 hours ago</span>
-                  </div>
-                </div>
-
-                <div class="notification-item d-flex align-items-center">
-                  <div class="notification-icon bg-success text-white rounded-circle">
-                    <i class="bi bi-check-circle"></i>
-                  </div>
-                  <div>
-                    <span class="fw-bold text-success">Backup Completed</span> successfully
-                    <span class="text-muted small pt-1">4 hours ago</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div><!-- End Notifications Card -->
-
-          <!-- System Settings Card -->
-          <div class="card settings-card">
-
-            <div class="card-body">
-              <h5 class="card-title">System Settings</h5>
-
-              <div class="settings">
-                <div class="setting-item d-flex align-items-center">
-                  <div class="setting-icon bg-secondary text-white rounded-circle">
-                    <i class="bi bi-gear"></i>
-                  </div>
-                  <div>
-                    <span class="fw-bold text-secondary">General Settings</span>
-                    <span class="text-muted small pt-1">Configure your system</span>
-                  </div>
-                </div>
-
-                <div class="setting-item d-flex align-items-center">
-                  <div class="setting-icon bg-primary text-white rounded-circle">
-                    <i class="bi bi-lock"></i>
-                  </div>
-                  <div>
-                    <span class="fw-bold text-primary">Security Settings</span>
-                    <span class="text-muted small pt-1">Manage security settings</span>
-                  </div>
-                </div>
-
-                <div class="setting-item d-flex align-items-center">
-                  <div class="setting-icon bg-warning text-white rounded-circle">
-                    <i class="bi bi-bell"></i>
-                  </div>
-                  <div>
-                    <span class="fw-bold text-warning">Notification Settings</span>
-                    <span class="text-muted small pt-1">Adjust notification preferences</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div><!-- End System Settings Card -->
-
-        </div><!-- End Right Side -->
-
+        </div><!-- End Video Section -->
       </div>
     </section>
 

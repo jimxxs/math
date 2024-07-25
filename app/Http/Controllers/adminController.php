@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Question;
 use App\Models\Answer;
+use App\Models\School;
 
 class AdminController extends Controller
 
@@ -54,4 +55,11 @@ class AdminController extends Controller
         // Implement your logic to process the answers file
         // For example, reading the file and saving data to the database
     }
+
+    public function count(){
+        $totalschools = School::count();
+        return view('index', compact('schools'));
+
+    }
 }
+

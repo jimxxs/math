@@ -34,11 +34,11 @@ Route::get('/forms-elements', function () {
     return view('forms-elements');
 })->name('forms-elements');
 
-// Admin Routes
+/* Admin Routes
 Route::get('/admin/dashboard', function () {
     return view('admin.dashboard');
 })->name('admin.dashboard');
-
+*/
 Route::get('/admin/upload-questions', [UploadQuestionsController::class, 'showUploadForm'])->name('showUploadForm');
 Route::post('/admin/upload-questions', [UploadQuestionsController::class, 'uploadQuestions'])->name('uploadQuestions');
 
@@ -91,3 +91,12 @@ Route::post('/upload-questions-answers', [AdminController::class, 'uploadQuestio
 Route::get('/home', [HomeController::class, 'home'])->name('home');
 
 Route::resource('schools', SchoolController::class);
+
+// routes/web.php
+Route::get('/schools', [SchoolController::class, 'index'])->name('schools.index');
+
+
+
+
+
+

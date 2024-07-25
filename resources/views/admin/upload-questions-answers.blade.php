@@ -36,7 +36,7 @@
     <h1>Upload Questions and Answers</h1>
     <nav>
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li><a href="{{ route('dashboard') }}">Home / </a></li>
         <li class="breadcrumb-item active">Upload Questions and Answers</li>
       </ol>
     </nav>
@@ -48,7 +48,7 @@
 
       <div class="card">
         <div class="card-body">
-          <form action="{{ route('uploadQuestions') }}" method="POST" enctype="multipart/form-data">
+          <form action="{{ route('admin.upload-questions') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group mb-3">
               <label for="questionsFile">Upload Questions File (questions.xlsx)</label>
