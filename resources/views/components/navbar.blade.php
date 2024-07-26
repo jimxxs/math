@@ -56,7 +56,7 @@
           </li>
 
           <li>
-            <a class="dropdown-item d-flex align-items-center" href="{{ route('userhome') }}">
+            <a class="dropdown-item d-flex align-items-center" href="{{ route('home') }}">
               <i class="bi bi-box-arrow-right"></i>
               <span>Sign Out</span>
             </a>
